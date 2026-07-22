@@ -2,144 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: rgb(236, 236, 228);
+.body{
+    @apply bg-zinc-100;
 }
 
-*{
-    font-family: 'Roboto', sans-serif;
+.container{
+    @apply max-w-7xl mx-auto px-6;
 }
 
-.mi_titulo_hero{
-    font-family: "Bevan", serif;
+/* NAVBAR */
+
+.navbar{
+    @apply fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md shadow-lg z-50;
 }
 
-.contacto{
-    background:#f3f4f6;
-    padding:60px 20px;
+.navbar-content{
+    @apply flex justify-between items-center h-20;
 }
 
-.contenedor-formulario{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+.logo{
+    @apply flex items-center gap-3;
 }
 
-.titulo-contacto{
-    text-align:center;
-    font-size:40px;
-    font-weight:bold;
-    color:#1f2937;
+.logo-img{
+    @apply h-10;
 }
 
-.descripcion-contacto{
-    text-align:center;
-    color:#6b7280;
-    margin:20px 0 40px;
+.logo-title{
+    @apply text-2xl font-bold tracking-wider text-white;
 }
 
-.formulario{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+.logo-subtitle{
+    @apply text-xs text-gray-400 tracking-[3px];
 }
 
-.campo{
-    display:flex;
-    flex-direction:column;
+.menu{
+    @apply hidden md:flex gap-10 text-white font-medium;
 }
 
-.campo-completo{
-    grid-column:1/3;
+.menu a{
+    @apply hover:text-red-500 duration-300;
 }
 
-.campo label{
-    margin-bottom:8px;
-    font-weight:bold;
+/* BOTONES */
+
+.btn-red{
+    @apply bg-red-600 hover:bg-red-700 duration-300 text-white px-6 py-3 rounded-lg;
 }
 
-.campo input,
-.campo textarea{
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:8px;
-    font-size:16px;
+.btn-black{
+    @apply bg-black text-white px-8 py-4 rounded-lg hover:bg-red-600 duration-300;
 }
 
-.campo input:focus,
-.campo textarea:focus{
-    outline:none;
-    border-color:#2563eb;
+.btn-outline{
+    @apply border-2 border-black px-8 py-4 rounded-lg hover:bg-black hover:text-white duration-300;
 }
 
-.genero{
-    display:flex;
-    gap:20px;
-    margin-top:10px;
+/* HERO */
+
+.hero{
+    @apply min-h-screen flex items-center pt-28;
 }
 
-.botones{
-    grid-column:1/3;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-top:20px;
+.hero-grid{
+    @apply grid lg:grid-cols-2 gap-16 items-center;
 }
 
-.btn-cancelar{
-    background:#ef4444;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
+.hero-subtitle{
+    @apply uppercase tracking-[8px] text-red-600 font-semibold mb-4;
 }
 
-.btn-cancelar:hover{
-    background:#dc2626;
+.hero-title{
+    @apply text-6xl font-black leading-tight text-zinc-900;
 }
 
-.btn-registrar{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
+.hero-title span{
+    @apply text-red-600;
 }
 
-.btn-registrar:hover{
-    background:#1d4ed8;
+.hero-text{
+    @apply mt-8 text-gray-600 text-lg leading-8;
 }
 
-.btn-limpiar{
-    background:#4b5563;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
+.hero-buttons{
+    @apply flex gap-5 mt-10;
 }
 
-.btn-limpiar:hover{
-    background:#374151;
+.stats{
+    @apply grid grid-cols-3 gap-6 mt-16;
 }
 
-@media(max-width:768px){
+.stats h2{
+    @apply text-3xl font-bold;
+}
 
-    .formulario{
-        grid-template-columns:1fr;
-    }
+.stats p{
+    @apply text-gray-500;
+}
 
-    .campo-completo{
-        grid-column:1;
-    }
-
-    .botones{
-        grid-column:1;
-        flex-direction:column;
-    }
+.hero-image{
+    @apply rounded-2xl shadow-2xl hover:scale-105 duration-500;
 }
